@@ -1,1 +1,0 @@
-# reservoirdb-protocol-typescript
