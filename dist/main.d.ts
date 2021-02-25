@@ -6,7 +6,7 @@ export interface DeleteComputeCluster {
     type: 'DeleteComputeCluster';
     name: ComputeClusterRef;
 }
-declare type ComputeClusterRef = string;
+export declare type ComputeClusterRef = string;
 export interface ComputeCluster {
     type: 'ComputeCluster';
 }
@@ -123,8 +123,8 @@ export declare enum ComputeClusterPermissions {
     USE = 1,
     ALL = 4294967295
 }
-declare type UserRef = string;
-declare type RoleRef = string;
+export declare type UserRef = string;
+export declare type RoleRef = string;
 export interface User {
     type: 'User';
     roles?: RoleRef[];
@@ -149,7 +149,7 @@ export interface DeleteSchema {
     type: 'DeleteSchema';
     name: SchemaRef;
 }
-declare type SchemaRef = string;
+export declare type SchemaRef = string;
 export interface Schema {
     type: 'Schema';
     tables: string[];
@@ -200,4 +200,3 @@ export interface Table {
 }
 export declare type TxnResult = (ComputeCluster | UIState | User | Role | Schema | Table);
 export declare type Command = (CreateComputeCluster | DeleteComputeCluster | UIGetState | CreateUser | GetUser | DeleteUser | AssignUserRoles | CreateRole | DeleteRole | GrantSchemaPermissions | GrantGlobalSchemaPermissions | GrantComputeClusterPermissions | GrantGlobalComputeClusterPermissions | GrantDatabasePermissions | CreateSchema | DeleteSchema | CreateTable | GetTable | AlterTable | DeleteTable | InsertData);
-export {};

@@ -12,7 +12,7 @@ export interface DeleteComputeCluster {
 }
 
 
-type ComputeClusterRef = string
+export type ComputeClusterRef = string
 
 
 export interface ComputeCluster {
@@ -150,10 +150,10 @@ export enum ComputeClusterPermissions {
 }
 
 
-type UserRef = string
+export type UserRef = string
 
 
-type RoleRef = string
+export type RoleRef = string
 
 
 export interface User {
@@ -180,7 +180,7 @@ export interface DeleteSchema {
 }
 
 
-type SchemaRef = string
+export type SchemaRef = string
 
 
 export interface Schema {
