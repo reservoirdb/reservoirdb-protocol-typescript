@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ColumnType = exports.ComputeClusterPermissions = exports.SchemaPermissions = exports.DatabasePermissions = void 0;
+exports.ColumnType = exports.ComputeClusterPermissions = exports.SchemaPermissions = exports.DatabasePermissions = exports.ComputeClusterState = void 0;
+var ComputeClusterState;
+(function (ComputeClusterState) {
+    ComputeClusterState["Activating"] = "Activating";
+    ComputeClusterState["Active"] = "Active";
+    ComputeClusterState["Deactivating"] = "Deactivating";
+    ComputeClusterState["Inactive"] = "Inactive";
+})(ComputeClusterState = exports.ComputeClusterState || (exports.ComputeClusterState = {}));
 var DatabasePermissions;
 (function (DatabasePermissions) {
     DatabasePermissions[DatabasePermissions["NONE"] = 0] = "NONE";

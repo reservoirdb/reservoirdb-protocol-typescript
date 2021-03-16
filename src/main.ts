@@ -10,11 +10,26 @@ export interface DeleteComputeCluster {
 }
 
 
+export interface ActivateComputeCluster {
+	name: ComputeClusterRef
+}
+
+
+export interface DeactivateComputeCluster {
+	name: ComputeClusterRef
+}
+
+
 export type ComputeClusterRef = string
 
 
-export interface ComputeCluster {
+export enum ComputeClusterState {
+	Activating = 'Activating', Active = 'Active', Deactivating = 'Deactivating', Inactive = 'Inactive'
+}
 
+
+export interface ComputeCluster {
+	state: ComputeClusterState
 }
 
 
@@ -211,4 +226,4 @@ export interface Table {
 export type TxnResult = ((ComputeCluster & { type: 'ComputeCluster' }) | (UIState & { type: 'UIState' }) | (User & { type: 'User' }) | (Role & { type: 'Role' }) | (Schema & { type: 'Schema' }) | (Table & { type: 'Table' }))
 
 
-export type Command = ((CreateComputeCluster & { type: 'CreateComputeCluster' }) | (DeleteComputeCluster & { type: 'DeleteComputeCluster' }) | (UIGetState & { type: 'UIGetState' }) | (CreateUser & { type: 'CreateUser' }) | (GetUser & { type: 'GetUser' }) | (DeleteUser & { type: 'DeleteUser' }) | (AssignUserRoles & { type: 'AssignUserRoles' }) | (CreateRole & { type: 'CreateRole' }) | (DeleteRole & { type: 'DeleteRole' }) | (GrantSchemaPermissions & { type: 'GrantSchemaPermissions' }) | (GrantGlobalSchemaPermissions & { type: 'GrantGlobalSchemaPermissions' }) | (GrantComputeClusterPermissions & { type: 'GrantComputeClusterPermissions' }) | (GrantGlobalComputeClusterPermissions & { type: 'GrantGlobalComputeClusterPermissions' }) | (GrantDatabasePermissions & { type: 'GrantDatabasePermissions' }) | (CreateSchema & { type: 'CreateSchema' }) | (DeleteSchema & { type: 'DeleteSchema' }) | (CreateTable & { type: 'CreateTable' }) | (GetTable & { type: 'GetTable' }) | (AlterTable & { type: 'AlterTable' }) | (DeleteTable & { type: 'DeleteTable' }) | (InsertData & { type: 'InsertData' }))
+export type Command = ((CreateComputeCluster & { type: 'CreateComputeCluster' }) | (DeleteComputeCluster & { type: 'DeleteComputeCluster' }) | (ActivateComputeCluster & { type: 'ActivateComputeCluster' }) | (DeactivateComputeCluster & { type: 'DeactivateComputeCluster' }) | (UIGetState & { type: 'UIGetState' }) | (CreateUser & { type: 'CreateUser' }) | (GetUser & { type: 'GetUser' }) | (DeleteUser & { type: 'DeleteUser' }) | (AssignUserRoles & { type: 'AssignUserRoles' }) | (CreateRole & { type: 'CreateRole' }) | (DeleteRole & { type: 'DeleteRole' }) | (GrantSchemaPermissions & { type: 'GrantSchemaPermissions' }) | (GrantGlobalSchemaPermissions & { type: 'GrantGlobalSchemaPermissions' }) | (GrantComputeClusterPermissions & { type: 'GrantComputeClusterPermissions' }) | (GrantGlobalComputeClusterPermissions & { type: 'GrantGlobalComputeClusterPermissions' }) | (GrantDatabasePermissions & { type: 'GrantDatabasePermissions' }) | (CreateSchema & { type: 'CreateSchema' }) | (DeleteSchema & { type: 'DeleteSchema' }) | (CreateTable & { type: 'CreateTable' }) | (GetTable & { type: 'GetTable' }) | (AlterTable & { type: 'AlterTable' }) | (DeleteTable & { type: 'DeleteTable' }) | (InsertData & { type: 'InsertData' }))

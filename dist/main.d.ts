@@ -4,8 +4,21 @@ export interface CreateComputeCluster {
 export interface DeleteComputeCluster {
     name: ComputeClusterRef;
 }
+export interface ActivateComputeCluster {
+    name: ComputeClusterRef;
+}
+export interface DeactivateComputeCluster {
+    name: ComputeClusterRef;
+}
 export declare type ComputeClusterRef = string;
+export declare enum ComputeClusterState {
+    Activating = "Activating",
+    Active = "Active",
+    Deactivating = "Deactivating",
+    Inactive = "Inactive"
+}
 export interface ComputeCluster {
+    state: ComputeClusterState;
 }
 export interface UIState {
     tables?: {
@@ -181,6 +194,10 @@ export declare type Command = ((CreateComputeCluster & {
     type: 'CreateComputeCluster';
 }) | (DeleteComputeCluster & {
     type: 'DeleteComputeCluster';
+}) | (ActivateComputeCluster & {
+    type: 'ActivateComputeCluster';
+}) | (DeactivateComputeCluster & {
+    type: 'DeactivateComputeCluster';
 }) | (UIGetState & {
     type: 'UIGetState';
 }) | (CreateUser & {
