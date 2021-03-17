@@ -46,12 +46,14 @@ export interface AuthLoginResponse {
 }
 export interface TxnRequest {
     commands: Command[];
+    run_on?: (ComputeClusterRef | undefined);
 }
 export interface TxnResponse {
     results: (TxnResult | undefined)[];
 }
 export interface QueryRequest {
     query: string;
+    run_on?: (ComputeClusterRef | undefined);
 }
 export interface CreateUser {
     user: UserRef;

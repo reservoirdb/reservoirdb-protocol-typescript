@@ -54,7 +54,7 @@ export interface AuthLoginResponse {
 
 
 export interface TxnRequest {
-	commands: Command[]
+	commands: Command[]; run_on?: (ComputeClusterRef | undefined)
 }
 
 
@@ -64,7 +64,7 @@ export interface TxnResponse {
 
 
 export interface QueryRequest {
-	query: string
+	query: string; run_on?: (ComputeClusterRef | undefined)
 }
 
 
