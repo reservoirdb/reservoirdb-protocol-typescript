@@ -63,8 +63,13 @@ export interface TxnResponse {
 }
 
 
+export interface CatalogContext {
+	default_catalog?: (string | undefined); default_schema?: (string | undefined)
+}
+
+
 export interface QueryRequest {
-	query: string; run_on?: (ComputeClusterRef | undefined)
+	query: string; run_on?: (ComputeClusterRef | undefined); catalog_context?: (CatalogContext | undefined)
 }
 
 
